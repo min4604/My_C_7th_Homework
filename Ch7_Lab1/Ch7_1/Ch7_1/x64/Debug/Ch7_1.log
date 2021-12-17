@@ -1,0 +1,4 @@
+﻿  main.c
+c:\c_code\ch7_lab1\source\main.c(39): warning C4133: '函式': 不相容的類型 - 從 'FILE *' 至 'const char *const '
+c:\c_code\ch7_lab1\source\main.c(45): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+  Ch7_1.vcxproj -> C:\c_code\Ch7_Lab1\Ch7_1\x64\Debug\Ch7_1.exe
