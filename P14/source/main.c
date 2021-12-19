@@ -6,7 +6,7 @@ int main(void)
 	FILE*fptr;
 	char ch;
 	int count = 0;
-	fopen_s(&fptr, "C:/c_code/homework/P14/welcome.txt", "r");
+	fopen_s(&fptr, "C:/c_code/homework/welcome.txt", "r");
 	if (fptr != NULL)
 	{
 		while ((ch = getc(fptr)) != EOF)

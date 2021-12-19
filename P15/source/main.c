@@ -6,8 +6,8 @@ int main(void)
 	FILE*fptr1,*fptr2;
 	char ch;
 	int count = 0;
-	fopen_s(&fptr1, "C:/c_code/homework/P15/welcome.txt", "r");
-	fopen_s(&fptr2, "C:/c_code/homework/P15/output.txt", "w");
+	fopen_s(&fptr1, "C:/c_code/homework/welcome.txt", "r");
+	fopen_s(&fptr2, "C:/c_code/homework/output.txt", "w");
 	if ((fptr1 != NULL)&& (fptr2 != NULL))
 	{
 		while ((ch = getc(fptr1)) != EOF)

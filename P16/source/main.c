@@ -1,25 +1,24 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
+#define ENTER 13
+#define MAX 80
 
-double r[] = { 0.1,0.105,0.11,0.115,0.12 };
-double p = 5000;
-int year = 15;
-double ans;
-int i, j;
 int main(void)
 {
-	for (i = 0; i < 5; i++)
+	FILE*fptr;
+	char str[MAX],ch;
+	int i = 0;
+	fopen_s(&fptr, "C:/c_code/homework/output.txt", "a");
+	printf("請輸入字串，按ENTER結束輸入:\n");
+	while ((ch = getche()) != ENTER && i<MAX)
 	{
-		printf("rate is%.1f%s\n", r[i] * 100,"%");
-		printf("year\tAmount on deposit\n");
-		for (j = 1; j <= year; j++)
-		{
-			ans = p * pow(1.0 + r[i], j);
-			printf("%4d%21.2f\n", j, ans);
-		}
+		str[i++]=ch;
 	}
-
+	putc('\n', fptr);
+	fwrite(str, sizeof(char), i, fptr);
+	fclose(fptr);
+	printf("\n檔案附加完成!!\n");
 	system("pause");
 	return 0;
+	
 }
