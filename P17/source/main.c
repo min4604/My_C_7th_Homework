@@ -1,54 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-int i, j;
+#define MAX 80
 
 int main(void)
 {
-	printf("(A)");
-	for (i = 0; i < 11; i++)
+	FILE*fptr;
+	char str[MAX];
+	int bytes=0;
+	fopen_s(&fptr, "C:/c_code/homework/output.txt", "r");
+	while (!feof(fptr))
 	{
-		for (j = 0; j < i; j++)
-		{
-			printf("%s", "*");
-		}
-		printf("\n");
+		bytes =fread(str,sizeof(char),  MAX - 1, fptr);
+		str[bytes] = '\0';
+		printf("%s\n", str);
 	}
-	printf("(B)\n");
-	for (i = 10; i > 0; i--)
-	{
-		for (j = i;  j> 0; j--)
-		{
-			printf("%s", "*");
-		}
-		printf("\n");
-	}
-	printf("(C)\n");
-	for (i = 0; i < 10; i++)
-	{
-		for (j = 0; j < i; j++)
-		{
-			printf("%s", " ");
-		}
-		for (j = 0; j < (10-i); j++)
-		{
-			printf("%s", "*");
-		}
-		printf("\n");
-	}
-	printf("(D)");
-	for (i = 11; i > 0; i--)
-	{
-		for (j = i; j > 0; j--)
-		{
-			printf("%s", " ");
-		}
-		for (j =(11-i); j > 0; j--)
-		{
-			printf("%s", "*");
-		}
-		printf("\n");
-	}
+	fclose(fptr);
 	system("pause");
 	return 0;
+	
 }
