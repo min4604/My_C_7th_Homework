@@ -1,3 +1,7 @@
-Welcome to the
-world of C language
-I love the C language best!
+Welcome
+to
+the
+world
+of
+C
+language

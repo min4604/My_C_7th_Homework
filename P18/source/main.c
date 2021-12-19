@@ -1,25 +1,23 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
-
-int i, j, k;
 
 int main(void)
 {
-	printf("side1 side2 hypotenuse\n");
-	for (i = 1; i <= 500; i++)
+	FILE*in,*out;
+	char str[100];
+	int cnt;
+	fopen_s(&in, "C:/c_code/homework/welcome.txt", "r");
+	fopen_s(&out, "C:/c_code/homework/output.txt", "w");
+	while (!feof(in))
 	{
-		for (j = 1; j <= 500; j++)
+		cnt = fscanf_s(in, "%s", str, sizeof(str));
+		if (cnt > 0)
 		{
-			for (k = 1; k <= 500; k++)
-			{
-				if (pow(i, 2) == (pow(j, 2) + pow(k, 2)))
-				{
-					printf("%5d %5d %10d\n", j, k, i);
-				}
-			}
+			fprintf(out, "%s\n", str);
 		}
 	}
+	fclose(in);
+	fclose(out);
 	system("pause");
 	return 0;
 }
